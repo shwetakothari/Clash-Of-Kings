@@ -1,0 +1,32 @@
+extends layout
+
+block content
+  body.homepage
+
+  #banner.jumbotron
+    .container
+      h1 Clash Of Kings
+      p.
+        A real-time multi-player game with Chess pieces
+
+      p.
+        <a class="btn btn-primary" href="https://github.com/nguyensjsu/cmpe202-fivestars">
+        View project on GitHub
+        </a>
+
+  .container
+    .row
+      .col-sm-3
+      .col-sm-6#playgame
+        h2 Play Game
+        form#joinForm(action="/join", method="POST", role="form")
+          //.form-group
+            label(for="gameID") Game ID
+            input#gameID.form-control(type="text", name="game-id")
+          .form-group
+            label(for="playerName") Name
+            input#playerName.form-control(type="text", name="player-name", placeholder="Player name")
+          button.btn.btn-primary(type="submit") Join
+
+  script(src="/js/jquery.min.js")
+  script(src="/js/bootstrap.min.js")
